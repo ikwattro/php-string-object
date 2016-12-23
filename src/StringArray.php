@@ -68,6 +68,30 @@ class StringArray implements \ArrayAccess
     }
 
     /**
+     * @return StringObject|null
+     */
+    public function first()
+    {
+        if ($this->size() > 0) {
+            return array_values($this->values)[0];
+        }
+
+        return null;
+    }
+
+    /**
+     * @return StringObject|null
+     */
+    public function last()
+    {
+        if ($this->size() > 0) {
+            return array_values($this->values)[$this->size()-1];
+        }
+
+        return null;
+    }
+
+    /**
      * @param mixed $offset
      * @return bool
      */

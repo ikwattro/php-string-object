@@ -38,4 +38,22 @@ class StringArrayTest extends \PHPUnit_Framework_TestCase
         $o = new StringArray(['a', 'b', 'c']);
         $this->assertTrue($o->contains(StringObject::newInstance('b')));
     }
+
+    public function testGetFirstElement()
+    {
+        $o = new StringArray([]);
+        $this->assertNull($o->first());
+        $o->add("a");
+        $this->assertEquals("a", $o->first());
+    }
+
+    public function testGetLastElement()
+    {
+        $o = new StringArray([]);
+        $this->assertNull($o->last());
+        $o->add("a");
+        $o->add("b");
+        $o->add("c");
+        $this->assertEquals("c", $o->last());
+    }
 }

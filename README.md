@@ -15,7 +15,7 @@ Example :
 
 $code = StringObject::newInstance("Toys - Bicycles and Bikes - 12398")
     ->split("-")
-    ->get(2)
+    ->last()
     ->trim();`
 
 # 12398
